@@ -1,6 +1,6 @@
 # 1. Site Settings
 title               : "phjung1"
-owner               : "DeerRIDER"
+owner               : "github"
 url                : "https://phjung1.github.io"
 ## baseurl            : "/pRoJEct-VeXEd"
 permalink           : /:title/
