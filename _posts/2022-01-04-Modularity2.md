@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Modularity-2
+title: Modularity 2
 date: 2022-01-04 04:39:00
 author: "phjung1"
 header-img: "#"
