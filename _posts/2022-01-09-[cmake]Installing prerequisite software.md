@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Cmake] Installing prerequisite software
+title: Installing prerequisite software
 date: 2022-01-09 21:26:00
 author: "phjung1"
 header-img: "#"

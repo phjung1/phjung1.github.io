@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Cmake] From a Simple Executable to Libraries
+title: From a Simple Executable to Libraries
 date: 2022-01-09 22:26:00
 author: "phjung1"
 header-img: "#"
@@ -147,5 +147,19 @@ In this recipte, we have used a simple CMakeLists.txt to build a 'hello world' e
 
 
 To configure the project and generate its build system, we have to run CMake through its command-line interface (CLI). The CMake CLI offers a number of switches, cmake --help will output to screen the full help menu listing all of the available switches. We will learn more about them throughout the book. As you will notice from the output of **cmake --help, most of them will let you access the CMake manual.** The typical series of commands issued for generating the build system is the following:
+
+    $ mkdir -p build
+    $ cd build
+    $ cmake ..
+
+Here, we created a directory, build, where the build system will be generated, we entered the build directory, and invoked CMake by pointing it to the location of CMakeLists.txt (in this case located in the parent directory). It is possible to use the following invocation to achieve the same effect:
+
+    $ cmake -H. -Bbuild
+
+This invocation is cross-platform and introduces the -H and -B CLI switches. With **-H. we are instructing CMake to search for the root CMakeLists.txt file in the current directory**
+
+**-Bbuild tells CMake to generate all of its files in a directory called build.**
+
+
 
 
