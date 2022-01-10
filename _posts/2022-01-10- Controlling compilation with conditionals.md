@@ -30,40 +30,37 @@ Let us construct CMakeLists.txt to achieve this:
 
 1. We start out by defining the minimum CMake version, project name, and supported language:
    
-    cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+        cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
    
-    project(recipe-04 LANGUAGES CXX)
+       project(recipe-04 LANGUAGES CXX)
 
 2. We introduce a new variable, USE_LIBRARY. This is a logical variable and its value will be set to OFF. We also print its value for the user:
    
-    set(USE_LIBRARY OFF)
+       set(USE_LIBRARY OFF)
    
-    message(STATUS 'Compile sources into a library? ${USE_LIBRARY}')
+       message(STATUS 'Compile sources into a library? ${USE_LIBRARY}')
 
 3. Set the BUILD_SHARED_LIBS global variable, defined in CMake, to OFF. Calling add_library and omitting the second argument will build a static library:
    
-    set(BUILD_SHARED_LIBS OFF)
+       set(BUILD_SHARED_LIBS OFF)
 
 4. We then introduce a variable, _sources, listing Message.hpp and Message.cpp:
    
-    list(APPEND _sources Message.hpp Message.cpp)
+       list(APPEND _sources Message.hpp Message.cpp)
 
 5. We then introduce an if-else statement based on the value of USE_LIBRARY. If the logical toggle is true, Message.hpp and Message.cpp will be packaged into a library:
    
-    if(USE_LIBRARY)
-   
-   # add_library will create a static library
-   
-   # since BUILD_SHARED_LIBS is OFF
-   
-      add_library(message ${_sources})
-   
-      add_executable(hello-world hello-world.cpp)
-   
-      target_link_libraries(hello-world message)
-    else()
-      add_executable(hello-world hello-world.cpp ${_sources})
-    endif()
+       if(USE_LIBRARY)
+         # add_library will create a static library
+         # since BUILD_SHARED_LIBS is OFF
+         add_library(message ${_sources})
+       
+         add_executable(hello-world hello-world.cpp)
+       
+         target_link_libraries(hello-world message)
+       else()
+         add_executable(hello-world hello-world.cpp ${_sources})
+       endif()
 
 6. We can again build with the same set of commands. Since USE_LIBRARY is set to OFF, the hello-world executable will be compiled from all sources. This can be verified by running the objdump -x command on GNU/Linux.
 
