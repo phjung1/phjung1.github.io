@@ -15,7 +15,7 @@ tags:
 
 # Interpolation Search
 
-Given a sorted array of n uniformly distributed values arr[], write a function to search for a particular element x in the array.
+Given a sorted array of n uniformly distributed values arr[], write a function to search for a particular element x in the array.d
 
 
 
