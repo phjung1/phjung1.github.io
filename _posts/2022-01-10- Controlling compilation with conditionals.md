@@ -31,13 +31,13 @@ Let us construct CMakeLists.txt to achieve this:
 1. We start out by defining the minimum CMake version, project name, and supported language:
    
         cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-   
+       
        project(recipe-04 LANGUAGES CXX)
 
 2. We introduce a new variable, USE_LIBRARY. This is a logical variable and its value will be set to OFF. We also print its value for the user:
    
        set(USE_LIBRARY OFF)
-   
+       
        message(STATUS 'Compile sources into a library? ${USE_LIBRARY}')
 
 3. Set the BUILD_SHARED_LIBS global variable, defined in CMake, to OFF. Calling add_library and omitting the second argument will build a static library:
