@@ -28,5 +28,3 @@ in between input and output, when we apply computer vision techniques to images,
 By default. OpenCV uses the BGR color model(with 8 bits per channel) to represent any image that it loads from file or captures form a camera
 
 
-
-
